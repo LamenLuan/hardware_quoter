@@ -7,5 +7,4 @@ module.exports = class Vendor {
       new chrome.Options().addArguments("--disable-notifications")
     ).build();
   }
-  async searchProducts() {}
 }
