@@ -2,6 +2,11 @@ const { By, until, Key } = require("selenium-webdriver")
 const Vendor = require("./vendor");
 
 module.exports = class Kabum extends Vendor {
+
+  makeSearch(productName) {
+    this.searchProducts(productName);
+  }
+
   async searchProducts(productName) {
     await this.driver.get("https://www.kabum.com.br")
 
@@ -10,7 +15,6 @@ module.exports = class Kabum extends Vendor {
     );
 
     await searchBar.sendKeys(productName, Key.ENTER);
-
-    await this.driver.quit();
   }
+  
 }
